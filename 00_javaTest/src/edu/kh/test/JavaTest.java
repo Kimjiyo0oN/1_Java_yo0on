@@ -16,6 +16,7 @@ public class JavaTest {
 		System.out.println(100 + 200 + 300 + 400 );
 		
 		System.out.println("git 어렵다");
+		System.out.println("git 연습 많이 해야해");
 	}
 	
 	
