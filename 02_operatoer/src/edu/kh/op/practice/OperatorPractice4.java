@@ -17,6 +17,11 @@ public class OperatorPractice4 {
 		System.out.print("수학 : ");
 		int input2 = sc.nextInt();
 		
+		// 합계를 저장하기 위한 변수 
+		// int sum 
+		
+		//평균을 저장하기 위한변수
+		//double avg = sum / 3.0
 		System.out.println("합계 : " + (input+ input1 + input2));
 		double result = ((input + input1 + input2)/3.0);
 		System.out.println("평균 : " + result);
