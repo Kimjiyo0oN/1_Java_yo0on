@@ -161,8 +161,8 @@ public class LoopPractice {
 				System.out.print("*");
 			}
 			System.out.println("");
-		}
-		
+		}  
+	
 	}
 	public void practice10() {
 		Scanner sc = new Scanner(System.in);
@@ -181,6 +181,21 @@ public class LoopPractice {
 			}
 			System.out.println("");
 		}
+		
+//		for(int row=1; row <= input*2-1; row++){
+//		if(row < input){
+//			for(int col=1; col <= row; col++){
+//				System.out.print("*");
+//			}
+//			
+//
+//		}else{
+//			for(int col=input; col > row-input; col--){
+//				System.out.print("*");
+//			}
+//		}
+//		System.out.println();
+//	}	
 	
 	}
 	public void practice11() {
@@ -202,6 +217,17 @@ public class LoopPractice {
 			}
 			System.out.println("");
 		}
+		
+//		for(int j = 1; j <= (input*2)-1; j++) {
+//			for(int i = 1; i <= j; i++) {
+//				if(i < input-i || i > input+i) {
+//					System.out.print(" ");
+//				}else {
+//					System.out.print("*");  
+//				}	
+//			}
+//			System.out.println("");
+//		}
 	}
 	public void practice12() {
 		

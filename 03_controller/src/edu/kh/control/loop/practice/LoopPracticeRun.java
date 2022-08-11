@@ -9,8 +9,8 @@ public class LoopPracticeRun {
 	public static void main(String[] args) {
 		
 		LoopPractice lp = new LoopPractice();
-		lp.practice5();
-		
-	}
+		lp.practice11();
+		  
+	}  
 	
 }
