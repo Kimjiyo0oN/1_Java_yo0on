@@ -1,9 +1,9 @@
 package edu.kh.control.branch;
 
 public class BranchRun {
-	public static void main() {
+	public static void main(String[] args) {
 		BranchExample  branchEx= new BranchExample();
-		branchEx.ex2();
+		branchEx.ex6();
 	}
 	
 }
