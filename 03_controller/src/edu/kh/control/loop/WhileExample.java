@@ -35,6 +35,11 @@ public class WhileExample {
 		}
 	}
 	public void ex2() {
+		// while 기초 사용법 2
+		
+		// 입력되는 모든 정수의 합 구하기
+		// 단, 0이 입력되면 반복 종료
+		
 		Scanner sc = new Scanner(System.in);
 		
 		int sum =0;
@@ -56,7 +61,8 @@ public class WhileExample {
 			//input cannot be resolved to a variable
 			// ==input 변수가 해석되지 않는다 == 변수가 존재하지 않는다
 			
-			//The local variable input may not have been 
+			// The local variable input may not have been initialized
+			// == input 변수가 초기화 되지 않았다 
 			
 			System.out.print("정수 입력 : ");
 			input = sc.nextInt();
@@ -136,6 +142,7 @@ public class WhileExample {
 			 case 9: break;
 			 default : System.out.println("잘못 입력 하셨습니다.");
 			 }//switch end
+			 
 //			 if(!flag) {
 //				 flag = true;
 //			 }
