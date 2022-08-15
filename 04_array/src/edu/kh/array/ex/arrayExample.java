@@ -33,9 +33,9 @@ public class arrayExample {
 		// 이를 arr이라고 부름
 		
 		arr[0] =10; 
-		arr[1] =10; 
-		arr[2] =10; 
-		arr[3] =10;
+		arr[1] =20; 
+		arr[2] =30; 
+		arr[3] =40;
 		
 		//System.out.println(Arrays.toString(arr));
 		
@@ -120,9 +120,10 @@ public class arrayExample {
 		System.out.println(arr[2]);
 		System.out.println(arr[3]);
 		
-		//stack 영역은 컴파일러가 알아서 초기화 X
-		//
-		
+		// stack 영역은 컴파일러가 알아서 초기화 X
+		// heap  영역은 컴파일러가 알아서 초기화 O
+		int a;
+		//System.out.println(a);
 		//The local variable a may not have been initialized
 		
 		System.out.println("======================================");
@@ -141,18 +142,94 @@ public class arrayExample {
 			// i = index
 			System.out.printf("arr[%d] = %d  \n", i , arr[i]);
 		}
-	}
-	public  void ex4() {
+		System.out.println("==============================");
+		
+		// 2) for문을 이용한 초기화
+		// -> 배열의 각 인덱스에 대입되는 값이 일정한 규칙성이 있을 경우 사용
+		
+		// int 10개를 저장하는 배열의 각 요소(index)에
+		// 10,20,30 ~ 100 까지 대입
+		
+		int[] arr2 = new int[10]; // index 0 ~ 9
+		
+		for(int i=0 ; i<arr2.length ; i++) {
+			arr2[i] = 10 * (i + 1);   
+			
+			// 0 -> 10
+			// 1 -> 20
+			// 2 -> 30 ...
+		}
+		
+		// 출력
+		for(int i=0 ; i<arr2.length ; i++) {
+			System.out.printf("arr2[%d] = %d \n", i, arr2[i]);
+		}
 		
 	}
+	}
+	public  void ex4() {
+		// 2) for문을 이용한 초기화
+		
+		// 5명의 키(cm)를 입력 받고 평균 구하기
+				
+		// 1번 키 입력 : 170.5
+		// 2번 키 입력 : 165.7
+		// 3번 키 입력 : 184.3
+		// 4번 키 입력 : 190.2
+		// 5번 키 입력 : 174.4
+				
+		// 입력 받은 키 : 170.5  165.7  184.3  190.2  174.4
+		// 평균 : 177.02cm
+				
+		Scanner sc = new Scanner(System.in);
+				
+		double[] heightArr = new double[5];
+				
+		for(int i=0 ; i < heightArr.length ; i++) {
+			System.out.print( (i+1) + "번 키 입력 : ");
+					
+			heightArr[i] = sc.nextDouble();
+		}
+				
+		// 배열에 값이 잘 대입 되었는지 임시 확인
+				
+		//System.out.println( heightArr ); 
+		// 배열의 주소가 출력됨 
+		// -> 왜? heightArr 참조 변수에는 
+		//    배열의 시작 주소가 저장되어 있기 때문에
+				
+		// Arrays.toString(배열명) : 배열에 저장된 모든 값을 한 줄로 간단히 출력
+		//System.out.println( Arrays.toString(heightArr) );
+				
+		System.out.println(); // 줄 바꿈
+				
+		double sum = 0; // 합계  (평균 구할 때 사용)
+				
+		System.out.print("입력 받은 키 : ");
+				
+		for(int i=0 ; i < heightArr.length ; i++) {
+				sum += heightArr[i];
+				System.out.print(heightArr[i] + " ");
+			}
+				
+			System.out.printf("\n평균 : %.2f \n", sum / heightArr.length);
+	}
 	public  void ex5() {
-		// ArrayIndexOutOfBoundsException
+		// ArrayIndexOutOfBoundsException : 배열 인덱스 범위 초과
 		//
 		
 		int[] arr = new int[3];
 		
 		for(int i =0; i < arr.length; i++) {
 			System.out.println(arr[i]);
+		}
+		// Arrays.toString(arr) : 배열에 저장된 모든 값을 한 줄로 간단히 출력
+		System.out.println(Arrays.toString(arr));
+				
+		System.out.println("==========");
+				
+		for(int i=0 ; i < arr.length ; i++) {
+			System.out.print(arr[i] + " ");
 		}
 	}
 	public  void ex6() {
