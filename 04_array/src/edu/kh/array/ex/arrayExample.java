@@ -166,7 +166,6 @@ public class arrayExample {
 		}
 		
 	}
-	}
 	public  void ex4() {
 		// 2) for문을 이용한 초기화
 		
