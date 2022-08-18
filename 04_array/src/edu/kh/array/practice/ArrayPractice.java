@@ -3,6 +3,8 @@ package edu.kh.array.practice;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import edu.kh.array.ex.arrayPracticeTest;
+
 public class ArrayPractice {
 	public void practice1() {
 		
@@ -283,45 +285,33 @@ public class ArrayPractice {
 		System.out.print("배열의 크기를 입력하세요 : ");
 		int input = sc.nextInt();
 		sc.nextLine(); 
-		boolean flag = true;
-		int count =1;
-		//String[] arr1 = new String[6];
-		String arr1[] = new String[input];
+		int count =0;
+		String arr[] = new String[input];
+		for(int i =0; i < input; i++) {
+			System.out.printf("%d번째 문자열 : ", i+1);
+			arr[i] = sc.nextLine(); 
+		}
+		count = input;
+		boolean flag = false;
 		while(true) {
-			
-			String[] arr = new String[input];
-			for(int i =0; i < input; i++) {
-				System.out.printf("%d번째 문자열 : ", count++);
-				arr[i] = sc.nextLine(); 
-				
-			}
-			if(flag) {
-				arr1= arr;
-			}else {
-				String[] arr2 = new String[count-1];
-				System.arraycopy(arr1, 0, arr2, 0, arr1.length);
-				System.out.println((count-input-1)+"!"+Arrays.toString(arr1));
-				System.arraycopy(arr, 0, arr2, count-input-1, arr.length);
-				arr1= arr;
-			}
 			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
 			String input1 = sc.next();
-			if(input1.equals("n")||input1.equals("N")){
-//				if(flag) {
-//					arr1 = arr;
-//					//System.arraycopy(arr, 0, arr1, 0, arr.length);
-//				}else {
-//					System.arraycopy(arr, 0, arr1, count-input-1, arr.length);
-//				}
+			if(input1.equals("n")||input1.equals("N")) {
 				System.out.println(Arrays.toString(arr));
 				break;
 			}else {
 				System.out.print("더 입력하고 싶은 개수 : ");
 				input = sc.nextInt();
 				sc.nextLine(); 
+				String arr1[] = new String[count+input];
+				System.arraycopy(arr, 0, arr1, 0, arr.length);
+				for(int i =count; i < count+input; i++) {
+					System.out.printf("%d번째 문자열 : ", i+1);
+					arr1[i] = sc.nextLine();
+				}
+				count +=input;
+				arr = arr1;
 			}
-			flag = false;
-			
 		}
 		
 	}
@@ -528,27 +518,33 @@ public class ArrayPractice {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		char[][] array = new char[6][6];
-		array[0][1] = '0';
- 		array[1][0] = '0';
- 		array[0][2] = '1';
- 		array[2][0] = '1';
- 		array[0][3] = '2';
- 		array[3][0] = '2';
- 		array[0][4] = '3';
- 		array[4][0] = '3';
- 		array[0][5] = '4';
- 		array[5][0] = '4';
-//		int count =0;
-//		for(int i =1; i<array.length; i++) {
-//			array[0][i] = (char) (i-1);
-//			array[i][0] = 0;
-//		}
+		String[][] array = new String[6][6];
+//		array[0][1] = '0';
+// 		array[1][0] = '0';
+// 		array[0][2] = '1';
+// 		array[2][0] = '1';
+// 		array[0][3] = '2';
+// 		array[3][0] = '2';
+// 		array[0][4] = '3';
+// 		array[4][0] = '3';
+// 		array[0][5] = '4';
+// 		array[5][0] = '4';
+		int count =0;
+		array[0][0] = " ";
+		for(int i =1; i<array.length; i++) {
+			array[0][i] = String.valueOf(i-1);
+			array[i][0] = String.valueOf(i-1);	
+		}
+		for(int i=1; i< array.length; i++) {
+			for(int y=1; y< array[i].length; y++) {
+				array[i][y] = " ";	
+			}
+		}
  		System.out.print("행 인덱스 입력 : ");
 		int row = sc.nextInt();
 		System.out.print("열 인덱스 입력 : ");
 		int col = sc.nextInt();
-		array[row+1][col+1] = 'X';
+		array[row+1][col+1] = "X";
 		for(int i=0; i< array.length; i++) {
 			for(int y=0; y< array[i].length; y++) {
 				System.out.print(array[i][y]+" ");
@@ -559,17 +555,18 @@ public class ArrayPractice {
 	public void practice24() {
 		Scanner sc = new Scanner(System.in);
 		
-		char[][] array = new char[6][6];
-		array[0][1] = '0';
- 		array[1][0] = '0';
- 		array[0][2] = '1';
- 		array[2][0] = '1';
- 		array[0][3] = '2';
- 		array[3][0] = '2';
- 		array[0][4] = '3';
- 		array[4][0] = '3';
- 		array[0][5] = '4';
- 		array[5][0] = '4';
+		String[][] array = new String[6][6];
+		int count =0;
+		array[0][0] = " ";
+		for(int i =1; i<array.length; i++) {
+			array[0][i] = String.valueOf(i-1);
+			array[i][0] = String.valueOf(i-1);	
+		}
+		for(int i=1; i< array.length; i++) {
+			for(int y=1; y< array[i].length; y++) {
+				array[i][y] = " ";	
+			}
+		}
  		while(true) {
  			System.out.print("행 인덱스 입력 : ");
  			int row = sc.nextInt();
@@ -579,7 +576,7 @@ public class ArrayPractice {
  			}
  			System.out.print("열 인덱스 입력 : ");
  			int col = sc.nextInt();
- 			array[row+1][col+1] = 'X';
+ 			array[row+1][col+1] = "X";
  			for(int i=0; i< array.length; i++) {
  				for(int y=0; y< array[i].length; y++) {
  					System.out.print(array[i][y]+" ");
@@ -588,4 +585,106 @@ public class ArrayPractice {
  			}	
  		}
 	}
+	public void BingoGame() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("빙고판 크기 지정 : ");
+		int row = sc.nextInt();
+		
+		boolean flag = false;
+		String[][] array = new String[row][row];
+		for(int i=0; i< array.length; i++) {
+			for(int y=0; y< array[i].length; y++) {
+				int ran = (int)(Math.random()*row*row+1);
+				array[i][y] = String.valueOf(ran);
+				flag = false;
+				for(int ix =0; ix <= i; ix++) {
+					if(flag) {
+						break;
+					}
+					for(int x=0; x < array[i].length; x++) {
+						if((i) == ix && x >=y) {
+							flag = true;
+							break;
+						}
+						//System.out.println(x+":"+array[i][x].equals(String.valueOf(ran)));
+						if(array[ix][x].equals(String.valueOf(ran))) {
+							//array[i][x]==String.valueOf(ran)
+							y--;
+							flag = true;
+							break;
+						}
+					}	
+				}
+			}
+		}
+		for(int i=0; i< array.length; i++) {
+				for(int y=0; y< array[i].length; y++) {
+					System.out.print(array[i][y]+" ");
+				}
+				System.out.println();
+			}	
+		System.out.println("============빙고게임 시작============");
+		
+		while(true) {
+			int roundCount =0;
+			int[][] bingoCount = new int[row+1][row+1];
+			System.out.print("정수를 입력하시오 : ");
+			int bingo = sc.nextInt();
+			if(1 > bingo || bingo > row*row) {
+				System.out.println("다시 입력해수세요");
+				continue;
+			}
+			for(int i=0; i< array.length; i++) {
+ 				for(int y=0; y< array[i].length; y++) {
+ 					if(array[i][y].equals(String.valueOf(bingo))) {
+ 						array[i][y] ="★";
+ 					}
+ 					System.out.print(array[i][y]+" ");
+ 				}
+ 				System.out.println();
+ 			}
+			for(int i=0; i< array.length; i++) {
+ 				for(int y=0; y< array[i].length; y++) {
+ 					if(array[i][y].equals("★")) {
+ 						bingoCount[i][row] +=1;
+ 						bingoCount[row][y] +=1;
+ 						if(i==y) {
+ 							bingoCount[row][row]+=1;
+ 							
+ 						}	
+ 						for(int x =0; x<row;x++) {
+ 							if(((i-x)==0)&&((y-(row-1)+x)==0)) {
+ 								bingoCount[0][0] +=1;
+ 								break;
+ 							}
+ 						}
+ 					}
+ 				}
+ 			}
+			for(int y=0; y< bingoCount.length; y++) {
+				if(bingoCount[row][y]==row) {
+					roundCount++;
+				}
+				if(bingoCount[0][y]==row) {
+					roundCount++;
+				}
+			}
+			for(int i=0; i< bingoCount.length-1; i++) {
+				if(bingoCount[i][row]==row) {
+					roundCount++;
+				}
+			}
+			
+			
+			System.out.printf("현재 %d빙고\n",roundCount);
+			if(roundCount>=3) {
+				System.out.println("***** BINGO!!! *****");
+				break;
+			}
+		}                                                  
+		
+		
+	}
+	
 }

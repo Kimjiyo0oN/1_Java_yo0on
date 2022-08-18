@@ -4,6 +4,6 @@ public class ArrayPracticeRun {
 	public static void main(String[] args) {
 		
 		ArrayPractice ap = new ArrayPractice();
-		ap.practice14();
+		ap.BingoGame();
 	}
 }
