@@ -1,6 +1,7 @@
 package edu.kh.opp.constructor;
 
 import edu.kh.opp.constructor.model.vo.Member;
+import edu.kh.opp.field.model.vo.Temp;
 
 public class ConstructorRun {
 	public static void main(String[] args) {
@@ -20,6 +21,8 @@ public class ConstructorRun {
 		
 		Member member6 = new Member("rlfald","안알려줌", "01046573898",11);
 		Member member7 = new Member("wldns","몰라", "01043344418",20);
+		
+		Temp t1= new Temp(); 
 		
 		
 		System.out.println("ff");
