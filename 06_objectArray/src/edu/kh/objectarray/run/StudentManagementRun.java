@@ -16,6 +16,7 @@ public class StudentManagementRun {
 		// 어떤 참조 변수도 참조하지 않으면
 		// GC에 의해서 Heap영역에서 지워지게 된다!
 		// -> java 특징 중 자동 메모리 관리
+
 		
 	}
 }
