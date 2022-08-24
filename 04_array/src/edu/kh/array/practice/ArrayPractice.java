@@ -620,7 +620,7 @@ public class ArrayPractice {
 		}
 		for(int i=0; i< array.length; i++) {
 				for(int y=0; y< array[i].length; y++) {
-					System.out.print(array[i][y]+" ");
+					System.out.printf("%2s ",array[i][y]);
 				}
 				System.out.println();
 			}	
@@ -640,7 +640,7 @@ public class ArrayPractice {
  					if(array[i][y].equals(String.valueOf(bingo))) {
  						array[i][y] ="★";
  					}
- 					System.out.print(array[i][y]+" ");
+ 					System.out.printf("%2s ",array[i][y]);
  				}
  				System.out.println();
  			}
@@ -662,13 +662,14 @@ public class ArrayPractice {
  					}
  				}
  			}
+			if(bingoCount[0][0]==row) {
+				roundCount++;
+			}
 			for(int y=0; y< bingoCount.length; y++) {
 				if(bingoCount[row][y]==row) {
 					roundCount++;
 				}
-				if(bingoCount[0][y]==row) {
-					roundCount++;
-				}
+				
 			}
 			for(int i=0; i< bingoCount.length-1; i++) {
 				if(bingoCount[i][row]==row) {
