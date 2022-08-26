@@ -67,8 +67,10 @@ public class Student {
 		return "Student [name=" + name + ", age=" + age + ", address=" + address + ", gender=" + gender + ", score="
 				+ score + "]";
 	}
-	//hashCode() 오버라이딩
-	//
+	// hashCode() 오버라이딩
+	// -> Hash라는 단어가 들어가는 컬렉션 사용 시 
+	//    반드시 오버라이딩 해야되는 메서드
+	//    (필드 값을 이용해서 정수를 만들어냄)
 	@Override
 	public int hashCode() {
 		return Objects.hash(address, age, gender, name, score);
