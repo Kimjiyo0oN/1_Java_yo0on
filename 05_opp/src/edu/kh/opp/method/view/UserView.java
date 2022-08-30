@@ -154,7 +154,7 @@ public class UserView {
 			
 			System.out.println("<회원 정보가 수정되었습니다.>");
 		}else {
-			
+			System.out.println("로그인 후 이용해주세요.");
 		}
 	}
 }

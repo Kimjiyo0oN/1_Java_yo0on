@@ -78,11 +78,11 @@ public class Student {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) //참조하는 객체의 주소값이 같냐 
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
+		if (getClass() != obj.getClass())  //!(obj instanceof Student)
 			return false;
 		Student other = (Student) obj;
 		return Objects.equals(address, other.address) && age == other.age && gender == other.gender

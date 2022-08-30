@@ -13,11 +13,5 @@ public class Child extends Parent{
 		
 		// IOException -> EOFException : 변경 가능
 		//  왜? EOFException이 더 좁은(구체적인) 예외 처리이기 때문에 가능
-		
-		
 	}
-
-	
-	
-	
 }

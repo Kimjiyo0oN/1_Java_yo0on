@@ -68,7 +68,7 @@ public class ServerService {
 //			5. 연결된 클라이언트와 입출력 스트림 생성
 			//-> 클라이언트가 서버 요청 시 소켓을 전달함 
 			//-> 소켓에 입/출력 스트림이 담겨 있음
-			is = clientSocket.getInputStream();
+			is = clientSocket.getInputStream(); 
 			os = clientSocket.getOutputStream();
 			
 //			6. 보조 스트림을 통해 성능 개선
@@ -90,10 +90,10 @@ public class ServerService {
 			String str = sdf.format(now) + "[서버 접속 성공]";
 			
 			pw.println(str); //서버 -> 클라이언트로 출력
-			pw.flush(); // flush() : 스트림의 내용을 밀어냄
+			pw.flush(); // flush() : 스트림의 내용을 밀어냄 flush(); 중요 출력하는 PrintWriter
 			
 			//
-			String clientMessage = br.readLine();
+			String clientMessage = br.readLine();   //br.readLine()
 			
 			String clientIP = clientSocket.getInetAddress().getHostAddress();
 								//클라이언트 IP

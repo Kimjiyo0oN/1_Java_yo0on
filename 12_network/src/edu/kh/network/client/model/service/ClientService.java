@@ -17,7 +17,7 @@ public class ClientService {
 		String serverIP ="127.0.0.1"; //loop back IP(현재 컴퓨토를 나타내는 IP)
 		int port = 8500;
 		
-		Socket clientSocket = null;
+		Socket clientSocket = null;  //클라이언트는 클라이언트 소켓만 
 		
 		InputStream is = null;
 		OutputStream os = null;
@@ -27,13 +27,13 @@ public class ClientService {
 		
 		try {
 			System.out.println("[Client]");
-			clientSocket = new Socket(serverIP, port);
+			clientSocket = new Socket(serverIP, port);  //clientSocket = new Socket(serverIP, port)
 			//UnknownHostException, IOException : IP가 잘못 되었을 때 발생하는 예외
 			
 //			2. 서버와의 입출력 스트림 오픈
 			if(clientSocket != null) { //서버와 연결이 성공한 경우
-				is = clientSocket.getInputStream();
-				os = clientSocket.getOutputStream();
+				is = clientSocket.getInputStream();   // is = clientSocket.getInputStream();
+				os = clientSocket.getOutputStream();  // os = clientSocket.getOuputStream();
 //				3. 보조 스트림을 통해 성능 개선
 				br = new BufferedReader(new InputStreamReader(is));
 				pw = new PrintWriter(os);
